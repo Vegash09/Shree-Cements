@@ -67,7 +67,7 @@ jobs:
               default: true
               workspace:
                 host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: ~/Workspace/Shared/DABS/
+                root_path: ~/DABS/
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -137,7 +137,7 @@ jobs:
               default: true
               workspace:
                 host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: ~/Workspace/Shared/DABS/
+                root_path: ~/DABS/
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE

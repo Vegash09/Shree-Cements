@@ -53,8 +53,8 @@ jobs:
             name: pharma_dabs
 
           include:
-            - dbx/*.yml
-            - dbx/*/*.yml
+            - src/*.yml
+            - src/*/*.yml
 
           sync:
             exclude:
@@ -123,8 +123,8 @@ jobs:
             name: pharma_dabs
 
           include:
-            - dbx/*.yml
-            - dbx/*/*.yml
+            - src/*.yml
+            - src/*/*.yml
 
           sync:
             exclude:

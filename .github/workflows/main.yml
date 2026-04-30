@@ -67,7 +67,7 @@ jobs:
               default: true
               workspace:
                 host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
-                root_path: '~/DABS/${bundle.target}'
+                root_path: '~/.bundle/${bundle.name}/${bundle.target}'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -77,7 +77,7 @@ jobs:
               mode: production
               workspace:
                 host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
-                root_path: '~/DABS/${bundle.target}'
+                root_path: '~/.bundle/${bundle.name}/${bundle.target}'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -137,7 +137,7 @@ jobs:
               default: true
               workspace:
                 host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
-                root_path: '~/DABS/${bundle.target}'
+                root_path: '~/.bundle/${bundle.name}/${bundle.target}'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -147,7 +147,7 @@ jobs:
               mode: production
               workspace:
                 host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
-                root_path: '~/DABS/${bundle.target}'
+                root_path: '~/.bundle/${bundle.name}/${bundle.target}'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE

@@ -34,7 +34,7 @@ jobs:
       TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 no extra job needed
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Setup Databricks CLI
         uses: databricks/setup-cli@main
@@ -104,7 +104,7 @@ jobs:
       TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 same expression
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
 
       - name: Setup Databricks CLI
         uses: databricks/setup-cli@main

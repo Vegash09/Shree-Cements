@@ -70,7 +70,7 @@ jobs:
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN RUN
+                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
             prod:
@@ -150,7 +150,7 @@ jobs:
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN RUN
+                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
           EOF

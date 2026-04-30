@@ -66,8 +66,8 @@ jobs:
               mode: development
               default: true
               workspace:
-                host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: ~/DABS/
+                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                root_path: '~/DABS/'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -76,8 +76,8 @@ jobs:
             prod:
               mode: production
               workspace:
-                host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: /DABS/
+                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                root_path: '/DABS'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -136,8 +136,8 @@ jobs:
               mode: development
               default: true
               workspace:
-                host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: ~/DABS/
+                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                root_path: '~/DABS/'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE
@@ -146,8 +146,8 @@ jobs:
             prod:
               mode: production
               workspace:
-                host: https://adb-7405607349730837.17.azuredatabricks.net/
-                root_path: /DABS/
+                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                root_path: '/DABS'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_MANAGE

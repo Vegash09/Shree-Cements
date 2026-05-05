@@ -68,7 +68,7 @@ jobs:
               default: true
               workspace:
                 host: '${{ secrets.DATABRICKS_HOST_DEV }}'
-                root_path: '/Workspace/Shared/dbx'
+                root_path: '/Workspace/dbx'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN
@@ -78,7 +78,7 @@ jobs:
               mode: production
               workspace:
                 host: '${{ secrets.DATABRICKS_HOST_PROD }}'
-                root_path: '/Workspace/Shared/dbx'
+                root_path: '/Workspace/dbx'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN

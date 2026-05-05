@@ -32,8 +32,7 @@ jobs:
       DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
       DATABRICKS_HOST_DEV: ${{ secrets.DATABRICKS_HOST_DEV }}
       DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_PROD }}
-      # DATABRICKS_HOST: https://adb-7405607349730837.17.azuredatabricks.net/
-      TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 no extra job needed
+      TARGET: ${{ github.event.inputs.target || github.ref_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -104,7 +103,7 @@ jobs:
       DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
       DATABRICKS_HOST_DEV: ${{ secrets.DATABRICKS_HOST_DEV }}
       DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_PROD }}
-      TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 same expression
+      TARGET: ${{ github.event.inputs.target || github.ref_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

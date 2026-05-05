@@ -30,7 +30,9 @@ jobs:
     env:
       DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_CLIENT_ID }}
       DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
-      DATABRICKS_HOST: https://adb-7405607349730837.17.azuredatabricks.net/
+      DATABRICKS_HOST_DEV: ${{ secrets.DATABRICKS_HOST_DEV }}
+      DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_PROD }}
+      # DATABRICKS_HOST: https://adb-7405607349730837.17.azuredatabricks.net/
       TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 no extra job needed
     steps:
       - name: Checkout code
@@ -66,7 +68,7 @@ jobs:
               mode: development
               default: true
               workspace:
-                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                host: '${{ secrets.DATABRICKS_HOST_DEV }}'
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
@@ -76,7 +78,7 @@ jobs:
             prod:
               mode: production
               workspace:
-                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                host: '${{ secrets.DATABRICKS_HOST_PROD }}'
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
@@ -100,7 +102,8 @@ jobs:
     env:
       DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_CLIENT_ID }}
       DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
-      DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+      DATABRICKS_HOST_DEV: ${{ secrets.DATABRICKS_HOST_DEV }}
+      DATABRICKS_HOST_PROD: ${{ secrets.DATABRICKS_HOST_PROD }}
       TARGET: ${{ github.event.inputs.target || github.ref_name }}  # 👈 same expression
     steps:
       - name: Checkout code
@@ -136,7 +139,7 @@ jobs:
               mode: development
               default: true
               workspace:
-                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                host: '${{ secrets.DATABRICKS_HOST_DEV }}'
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in
@@ -146,7 +149,7 @@ jobs:
             prod:
               mode: production
               workspace:
-                host: 'https://adb-7405607349730837.17.azuredatabricks.net/'
+                host: '${{ secrets.DATABRICKS_HOST_PROD }}'
                 root_path: '~/.bundle'
               permissions:
                 - user_name: sce21cs004@sairamtap.edu.in

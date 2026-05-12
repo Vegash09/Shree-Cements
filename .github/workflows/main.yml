@@ -70,20 +70,20 @@ jobs:
                 host: '${{ secrets.DATABRICKS_HOST_DEV }}'
                 root_path: '/Shree Cement'
               permissions:
-                - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
+                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                  level: CAN_RUN
             prod:
               mode: production
               workspace:
                 host: '${{ secrets.DATABRICKS_HOST_PROD }}'
                 root_path: '/Shree Cement'
               permissions:
-                - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
+                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                  level: CAN_RUN
           EOF
 
       - name: Validate bundle
@@ -141,20 +141,20 @@ jobs:
                 host: '${{ secrets.DATABRICKS_HOST_DEV }}'
                 root_path: '/Shree Cement'
               permissions:
-                - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
+                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                  level: CAN_RUN
             prod:
               mode: production
               workspace:
                 host: '${{ secrets.DATABRICKS_HOST_PROD }}'
                 root_path: '/Shree Cement'
               permissions:
-                - user_name: sce21cs004@sairamtap.edu.in
-                  level: CAN_RUN
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
+                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                  level: CAN_RUN
           EOF
 
       - name: Deploy bundle

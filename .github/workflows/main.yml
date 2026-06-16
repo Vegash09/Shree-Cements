@@ -81,7 +81,7 @@ jobs:
               permissions:
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
-                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN
             prod:
               mode: production
@@ -91,9 +91,16 @@ jobs:
               permissions:
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
-                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN
           EOF
+
+      # ── Dashboard: Validate ID is provided ──────────────────
+      - name: Validate Dashboard ID
+        if: ${{ github.event.inputs.deploy_dashboard == 'true' && github.event.inputs.dashboard_id == '' }}
+        run: |
+          echo "ERROR: Please provide a Dashboard ID!"
+          exit 1
 
       - name: Validate bundle
         run: databricks bundle validate -t ${{ env.TARGET }}
@@ -152,7 +159,7 @@ jobs:
               permissions:
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
-                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN
             prod:
               mode: production
@@ -162,9 +169,24 @@ jobs:
               permissions:
                 - service_principal_name: ${{ secrets.DATABRICKS_CLIENT_ID }}
                   level: CAN_MANAGE
-                - user_name: sce21cs004@sairamtap.edu.in   # dgb-developers group_name
+                - user_name: sce21cs004@sairamtap.edu.in
                   level: CAN_RUN
           EOF
 
+      # ── Dashboard: Generate from Dev workspace ───────────────
+      - name: Generate Dashboard from ID
+        if: ${{ github.event.inputs.deploy_dashboard == 'true' }}
+        run: |
+          databricks bundle generate dashboard \
+            --existing-id ${{ github.event.inputs.dashboard_id }} \
+            --force
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+
       - name: Deploy bundle
         run: databricks bundle deploy -t ${{ env.TARGET }}
+
+      # ── Dashboard: Skip message ──────────────────────────────
+      - name: Skip Dashboard
+        if: ${{ github.event.inputs.deploy_dashboard == 'false' }}
+        run: echo "Dashboard deployment skipped."
